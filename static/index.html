@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KB Viewer</title>
+<link rel="stylesheet" href="vendor/hljs-light.css" id="hljs-light">
+<link rel="stylesheet" href="vendor/hljs-dark.css" id="hljs-dark" disabled>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <header class="side-head">
+      <a href="#/" id="kb-name" class="kb-name">KB</a>
+      <div class="side-actions">
+        <button id="refresh" title="Reload tree">↻</button>
+        <button id="theme" title="Toggle theme">◐</button>
+      </div>
+    </header>
+    <div class="search-wrap">
+      <input id="search" type="search" placeholder="Search  ( / )" autocomplete="off">
+    </div>
+    <nav id="tree" class="tree"></nav>
+    <div id="results" class="results" hidden></div>
+  </aside>
+  <div class="resizer" data-for="sidebar"></div>
+
+  <main id="main">
+    <div id="crumbs" class="crumbs"></div>
+    <article id="content" class="markdown"></article>
+  </main>
+
+  <div class="resizer" data-for="notes"></div>
+  <aside id="notes">
+    <header class="notes-head">
+      <h2>Notes <span id="notes-count" class="badge" hidden></span></h2>
+      <label class="hide-done"><input type="checkbox" id="hide-done"> hide done</label>
+    </header>
+    <div id="notes-target" class="notes-target"></div>
+    <ul id="notes-list" class="notes-list"></ul>
+    <form id="note-form" class="note-form">
+      <textarea id="note-text" rows="4" placeholder="What needs changing on this page?  (Ctrl+Enter to save)"></textarea>
+      <button type="submit">Add note</button>
+    </form>
+    <footer id="notes-file" class="notes-file"></footer>
+  </aside>
+</div>
+
+<script src="vendor/marked.min.js"></script>
+<script src="vendor/purify.min.js"></script>
+<script src="vendor/highlight.min.js"></script>
+<script src="vendor/js-yaml.min.js"></script>
+<script src="vendor/mermaid.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
